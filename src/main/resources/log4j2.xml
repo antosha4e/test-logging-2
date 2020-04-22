@@ -6,19 +6,24 @@
             <PatternLayout>
                 <pattern>%d %highlight{%p} %c{1.} [%t] %m%n</pattern>
                 <replace regex="([0-9]{4})([0-9]{9,15})" replacement="$1************"/>
-<!--                <replace regex="(0+)*(2\d)(\s)*(\d{3})(\s)*(\d{3,4})" replacement="$1************"/>-->
             </PatternLayout>
         </Console>
 
         <Console name="STDOUT1" target="SYSTEM_OUT">
-            <CardNumberFilteringLayout />
+            <MaskingPatternLayout />
+        </Console>
+
+        <Console name="STDOUT2" target="SYSTEM_OUT">
+            <MaskingPatternLayout>
+                <PatternLayout pattern="%d %highlight{%p} %c{1.} [%t] %m%n" />
+            </MaskingPatternLayout>
         </Console>
 
     </Appenders>
 
     <Loggers>
         <Root level="INFO">
-            <AppenderRef ref="STDOUT1"/>
+            <AppenderRef ref="STDOUT2"/>
         </Root>
     </Loggers>
 </Configuration>
