@@ -9,9 +9,10 @@ class BankService {
 
     fun doTransaction() {
 
-        println("AAA")
+        log.info("Test card 1 4012888888881881")
+        log.info("Test card 2 {}", 4012888888881882)
 
-        log.info("Test")
-        log.info("Test {}", 1)
+        log.info("Test phone 1 {}", "+49 312313311")
+        log.info("Test phone 1 {}", "+64 27 111 2222")
     }
 }

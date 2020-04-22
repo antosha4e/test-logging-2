@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="info" name="TestApp">
+<Configuration status="info" name="TestApp" packages='com.antosha4e.log'>
 
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern='%d %highlight{%p} %c{1.} [%t] %m%n'/>
+            <PatternLayout>
+                <pattern>%d %highlight{%p} %c{1.} [%t] %m%n</pattern>
+                <replace regex="([0-9]{4})([0-9]{9,15})" replacement="$1************"/>
+<!--                <replace regex="(0+)*(2\d)(\s)*(\d{3})(\s)*(\d{3,4})" replacement="$1************"/>-->
+            </PatternLayout>
         </Console>
-        <Async name="Async">
-            <AppenderRef ref="STDOUT"/>
-        </Async>
+
+        <Console name="STDOUT1" target="SYSTEM_OUT">
+            <CardNumberFilteringLayout />
+        </Console>
+
     </Appenders>
 
     <Loggers>
         <Root level="INFO">
-            <AppenderRef ref="Async"/>
+            <AppenderRef ref="STDOUT1"/>
         </Root>
     </Loggers>
 </Configuration>
