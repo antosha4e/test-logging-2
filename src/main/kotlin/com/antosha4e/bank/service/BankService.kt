@@ -7,12 +7,11 @@ class BankService {
 
     private val log: Logger = LoggerFactory.getLogger(BankService::class.java)
 
-    fun doTransaction() {
+    fun doTransaction(cardNumber: String) {
 
         log.info("Started transaction")
 
-        log.info("Test card 1 4012888888881881")
-        log.info("Test card 2 {}", 4012888888881882)
+        log.info("Test card 2 {}", cardNumber)
 
         log.info("Finished transaction")
     }

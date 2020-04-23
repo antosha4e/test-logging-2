@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="TestApp" packages='com.antosha4e.log'>
+
+    <Appenders>
+        <TestLogAppender name="TestLogAppender">
+            <MaskingPatternLayout pattern="%d %highlight{%p} %c{1.} [%t] %m%n" />
+        </TestLogAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="TestLogAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

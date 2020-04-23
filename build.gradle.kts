@@ -17,6 +17,7 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-core:2.13.1")
 
     testImplementation("junit:junit:4.12")
+    testImplementation(kotlin("test-junit"))
 }
 
 tasks {

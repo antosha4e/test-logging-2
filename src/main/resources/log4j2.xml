@@ -2,20 +2,20 @@
 <Configuration status="info" name="TestApp" packages='com.antosha4e.log'>
 
     <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
+        <Console name="NAIVE_MASK" target="SYSTEM_OUT">
             <PatternLayout>
                 <pattern>%d %highlight{%p} %c{1.} [%t] %m%n</pattern>
                 <replace regex="([0-9]{4})([0-9]{9,15})" replacement="$1************"/>
             </PatternLayout>
         </Console>
 
-        <Console name="STDOUT1" target="SYSTEM_OUT">
-            <MaskingPatternLayout />
+        <Console name="INLINE_PATTERN" target="SYSTEM_OUT">
+            <MaskingPatternLayout pattern="%d %highlight{%p} %c{1.} [%t] %m%n" />
         </Console>
 
-        <Console name="STDOUT2" target="SYSTEM_OUT">
+        <Console name="NESTED_PATTERN" target="SYSTEM_OUT">
             <MaskingPatternLayout>
-                <PatternLayout pattern="%d %highlight{%p} %c{1.} [%t] %m%n" />
+                <PatternLayout pattern="%d {%p} %c{1.} [%t] %m%n" />
             </MaskingPatternLayout>
         </Console>
 
@@ -23,7 +23,9 @@
 
     <Loggers>
         <Root level="INFO">
-            <AppenderRef ref="STDOUT2"/>
+<!--            <AppenderRef ref="NAIVE_MASK"/>-->
+            <AppenderRef ref="INLINE_PATTERN"/>
+<!--            <AppenderRef ref="NESTED_PATTERN"/>-->
         </Root>
     </Loggers>
 </Configuration>
