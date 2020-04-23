@@ -4,5 +4,5 @@ import com.antosha4e.bank.service.BankService
 
 fun main() {
 
-    BankService().doTransaction("123")
+    BankService().doTransaction("4012888888881882")
 }
