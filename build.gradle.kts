@@ -1,5 +1,10 @@
 plugins {
+    application
     kotlin("jvm") version "1.3.71"
+}
+
+application {
+    mainClassName = "com.antosha4e.bank.ApplicationKt"
 }
 
 group = "com.antosha4e"

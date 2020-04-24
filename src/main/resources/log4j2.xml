@@ -2,6 +2,11 @@
 <Configuration status="info" name="TestApp" packages='com.antosha4e.log'>
 
     <Appenders>
+
+        <Console name="NO_MASKING" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %highlight{%p} %c{1.} [%t] %m%n" />
+        </Console>
+
         <Console name="NAIVE_MASK" target="SYSTEM_OUT">
             <PatternLayout>
                 <pattern>%d %highlight{%p} %c{1.} [%t] %m%n</pattern>
@@ -23,8 +28,9 @@
 
     <Loggers>
         <Root level="INFO">
+            <AppenderRef ref="NO_MASKING"/>
 <!--            <AppenderRef ref="NAIVE_MASK"/>-->
-            <AppenderRef ref="INLINE_PATTERN"/>
+<!--            <AppenderRef ref="INLINE_PATTERN"/>-->
 <!--            <AppenderRef ref="NESTED_PATTERN"/>-->
         </Root>
     </Loggers>

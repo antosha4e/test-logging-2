@@ -11,7 +11,7 @@ class BankService {
 
         log.info("Started transaction")
 
-        log.info("Test card 2 {}", cardNumber)
+        log.info("Performing transaction on card: {}", cardNumber)
 
         log.info("Finished transaction")
     }
